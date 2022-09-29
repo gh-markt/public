@@ -1,0 +1,1382 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage {url}
+\usepackage [numbers]{natbib}
+\usepackage {wrapfig2}
+\usepackage {natbib}
+
+\usepackage{setspace}
+\let\olditemize=\itemize
+\def\itemize{
+\olditemize
+\setlength{\itemsep}{-0.0ex}
+\setstretch{0.8}
+}
+\end_preamble
+\use_default_options false
+\begin_modules
+theorems-ams-bytype
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize letterpaper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 0.7in
+\topmargin 0.7in
+\rightmargin 0.7in
+\bottommargin 0.7in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip medskip
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\noindent
+\align center
+
+\size largest
+On the Existence of a Perfect Integer Box
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align right
+Mark Tarrabain (markt@nerdflat.com)
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align right
+Sept, 2022
+\end_layout
+
+\begin_layout Abstract
+Constraints on the diagonal dimensions of a rectangular prism with all integer-l
+ength edges, integer-length diagonals on each face, and main body or space
+ diagonal also being an integer are discussed, and arriving at the previously
+ undiscovered (to the best of this author's knowledge) conclusion that no
+ such box can actually exist.
+\end_layout
+
+\begin_layout Section*
+Introduction
+\end_layout
+
+\begin_layout Standard
+A perfect integer box, or 
+\begin_inset Quotes eld
+\end_inset
+
+perfect cuboid
+\begin_inset Quotes erd
+\end_inset
+
+ is a rectangular prism whose sides are all integer lengths, whose diagonals
+ on it's 6 faces are each integer lengths, and whose main diagonal through
+ the body of the prism from one corner to the opposite is also an integer.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "WEISSTEIN1"
+literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Does such a box actually exist, and if any do, what are its dimensions?
+\end_layout
+
+\begin_layout Standard
+In spite of the problem's apparent simplicity, finding such a box is actually
+ an unsolved problem
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GUY,RATHBUN,ROBERTS1,STECKLES"
+literal "true"
+
+\end_inset
+
+ in mathematics, which was likely known to Euler in his time.
+ In spite of appearing to be reasonably well known, given the ease with
+ which one can find information about it with no more than a single very
+ obvious Internet search, the problem does not appear to attract quite as
+ much interest in finding a solution as other certain other long-standing
+ problems, some of which have even been solved in relatively recent history,
+ such as Fermat's last theorem
+\begin_inset CommandInset citation
+LatexCommand cite
+key "WIKI2"
+literal "true"
+
+\end_inset
+
+.
+ Any insight into why this was so is, as far as this author is aware, mere
+ conjecture.
+ 
+\end_layout
+
+\begin_layout Standard
+The remainder of this paper is divided into 3 sections.
+ The first, immediately following this introduction, aquaints the reader
+ with some of the previous work that has been done on this problem.
+ The second section is the main body of the proof, which constructs a couple
+ of rational parameterizations for such a box, and then algebraically shows
+ that no satisfactory rational solutions exists, and in turn no integer
+ solutions will exist either.
+ A primary goal in this proof is to be readily comprehensible so that one
+ can with only a modest effort understand it and easily verify its conclusions.
+ No further reading is required to understand this proof beyond famiarity
+ with the Pythagorean theorem and familiarity with solving systems of equations.
+ This author personally recommends the applicable Wikipedia articles
+\begin_inset CommandInset citation
+LatexCommand cite
+key "WIKI1,WIKI4"
+literal "true"
+
+\end_inset
+
+ for readers unfamiliar with these topics.
+ None of the polynomials used by this proof are higher than degree 4, so
+ exact solutions can readily be found.
+ The various solutions this author found to the systems of equations used
+ by this proof were discovered using Maple CAS, and solutions verified on
+ www.wolframalpha.com.
+ The final section of this paper is the Appendix which proves lemmas utilized
+ by this proof.
+\end_layout
+
+\begin_layout Section*
+Previous Work
+\end_layout
+
+\begin_layout Standard
+Several papers have been written on this particular subject, and it is not
+ this authors intent to recap all of them to any great detail, but to only
+ briefly summarize a couple of them here.
+ The information presented in these past works is not really needed to understan
+d this particular proof, but is presented here to give the reader some historica
+l context to the nature of this problem, and offer some insight into previous
+ attempts at trying to solve it.
+\end_layout
+
+\begin_layout Standard
+Some of the previously published resources on the subject
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ROBERTS1,WIKI3"
+literal "true"
+
+\end_inset
+
+ only go so far as to describe what kind of algebraic constraints would
+ apply to the dimensions of a perfect integer box, should one ever be discovered
+, without attempting to draw conclusions about whether or not one exists.
+ 
+\end_layout
+
+\begin_layout Standard
+Attempts to even exhaustively search for any perfect integer boxes within
+ very large finite ranges have been previously made
+\begin_inset CommandInset citation
+LatexCommand cite
+key "BUTLER,KRAITCHIK,RATHBUN"
+literal "true"
+
+\end_inset
+
+ but none have produced any conclusive results
+\begin_inset CommandInset citation
+LatexCommand citet
+key "ROBERTS2,LUIJK"
+literal "true"
+
+\end_inset
+
+.
+ Such searches did reveal that should a perfect cuboid exist, at least one
+ of its dimensions would be at least on the order of trillions, if not actually
+ much larger.
+ 
+\end_layout
+
+\begin_layout Standard
+Skepticism that such a box even exists is not unheard of
+\begin_inset CommandInset citation
+LatexCommand cite
+key "BOYER,BUTLER,RATHBUN"
+literal "true"
+
+\end_inset
+
+, and while many have claimed to have discovered a proof of such a box's
+ non-existence, all are either trivially refuted or else are complex enough
+ that they have not yet been independently verified.
+\end_layout
+
+\begin_layout Section*
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Description of Problem
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{wrapfigure}{l}{6cm}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename illustrated-prism.ps
+	width 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{wrapfigure}
+\end_layout
+
+\end_inset
+
+Let us begin by considering the diagram of such a box illustrated here,
+ with dimensions 
+\begin_inset Formula $X$
+\end_inset
+
+, 
+\begin_inset Formula $Y$
+\end_inset
+
+, and 
+\begin_inset Formula $Z$
+\end_inset
+
+, and a main diagonal length of 
+\begin_inset Formula $D$
+\end_inset
+
+.
+ Also highlighted on the diagram, but unlabelled, are the face diagonals,
+ which we shall call 
+\begin_inset Formula $P$
+\end_inset
+
+, for the diagonal on the face bounded by 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $Y$
+\end_inset
+
+, 
+\begin_inset Formula $Q$
+\end_inset
+
+ for the diagonal on the face bounded by 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $Z$
+\end_inset
+
+, and 
+\begin_inset Formula $R$
+\end_inset
+
+ for the diagonal on the face bounded by 
+\begin_inset Formula $Y$
+\end_inset
+
+ and 
+\begin_inset Formula $Z$
+\end_inset
+
+.
+ Given the requirements for the perfect integer box, we know that the following
+ set of equations will be satisfied in the domain of integers:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{c}
+X^{2}+Y^{2}=P^{2}\\
+X^{2}+Z^{2}=Q^{2}\\
+Y^{2}+Z^{2}=R^{2}\\
+X^{2}+R^{2}=D^{2}\\
+Y^{2}+Q^{2}=D^{2}\\
+P^{2}+Z^{2}=D^{2}
+\end{array}\label{set1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+From 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "WIKI1"
+literal "true"
+
+\end_inset
+
+, we know that any primitive all-integer pythagorean triple is of the form:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\left(m^{2}-n^{2},2mn,m^{2}+n^{2}\right),\label{eq:primitive-triple}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+we can generalize this to apply to any right angle triangle with integer-length
+ sides as follows, per lemma 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lemma:integer-pythagorean-triple"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ to
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\left(m'-n',2\sqrt{m'n'},m'+n'\right),\label{eq:py-triple}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where the product of 
+\begin_inset Formula $m'$
+\end_inset
+
+ and 
+\begin_inset Formula $n'$
+\end_inset
+
+ is square.
+\end_layout
+
+\begin_layout Standard
+Since (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:py-triple"
+
+\end_inset
+
+) shows that there at least one of the short edges in a right angle triangle
+ must be even, at least one of the side lengths of any face of a perfect
+ integer box must be even.
+ If only one edge of a box were even, then there would exist a face that
+ had two odd side lengths, and since all pythagerean triples have at least
+ one even number, all possible perfect integer boxes have at least two even
+ side lengths.
+ Since a perfect integer box has at least two even side lengths.
+ it follows that the smallest possible perfect integer box must have exactly
+ one odd-length side, and in turn an odd body diagonal.
+\end_layout
+
+\begin_layout Standard
+We could therefore suppose that 
+\begin_inset Formula $X=2\sqrt{A_{1}A_{2}}$
+\end_inset
+
+, 
+\begin_inset Formula $Y=2\sqrt{B_{1}B_{2}}$
+\end_inset
+
+, and 
+\begin_inset Formula $P=2\sqrt{C_{1}C_{2}}$
+\end_inset
+
+, we can therefore rewrite
+\begin_inset Formula $X^{2}+Y^{2}=P{}^{2}$
+\end_inset
+
+ as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+4A_{1}A_{2}+4B_{1}B_{2}=4C_{1}C_{2}\label{eq:front-side}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+considering that 
+\begin_inset Formula $A_{1}+A_{2}=B_{1}+B_{2}=C_{1}+C_{2}=D$
+\end_inset
+
+, we can rewrite this as:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+4A_{a}\left(D-A_{a}\right)+4B_{b}\left(D-B_{b}\right)=4C_{c}\left(D-C_{c}\right),\label{eq:generalized-front-side}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+for arbitrary 
+\begin_inset Formula $a$
+\end_inset
+
+, 
+\begin_inset Formula $b$
+\end_inset
+
+, 
+\begin_inset Formula $c$
+\end_inset
+
+ equaling either 1 or 2, which can be rearranged and simplified as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+A_{a}^{2}+B_{b}^{2}-C_{c}^{2}=D\left(A_{a}+B_{b}-C_{c}\right).\label{eq:simplified-front-side}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let us now try to find suitable values for a perfect integer box with an
+ even body diagonal shall designate now as 
+\begin_inset Formula $2D$
+\end_inset
+
+, so we could find values for 
+\begin_inset Formula $A'_{a}$
+\end_inset
+
+, 
+\begin_inset Formula $B'_{b}$
+\end_inset
+
+, and 
+\begin_inset Formula $C'_{c}$
+\end_inset
+
+ where
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+{A'_{a}}^{2}+{B'_{b}}^{2}-{C'_{c}}^{2}=2D\left(A'_{a}+B'_{b}-C'_{c}\right),\label{eq:simplified-front-side-of-even}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If we add 
+\begin_inset Formula $2D^{2}$
+\end_inset
+
+ to both sides, (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:simplified-front-side-of-even"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) can be rearanged to the following sum of squares equation:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\left(A'_{a}-D\right)^{2}+\left(B'_{b}-D\right)^{2}=\left(C'_{c}-D\right)^{2}+D^{2}.\label{eq:sum-of-squares-for-box}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Per lemma 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lemma:sum-of-squares"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, all integer solutions to equations of the form 
+\begin_inset Formula $x^{2}+y^{2}=z^{2}+w^{2}$
+\end_inset
+
+can be written as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\left(mM+nN\right)^{2}+\left(mN-nM\right)^{2}=\left(mN+nM\right)^{2}+\left(mM-nN\right)^{2},\label{eq:sum-of-squares}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $m$
+\end_inset
+
+, 
+\begin_inset Formula $n$
+\end_inset
+
+, 
+\begin_inset Formula $M$
+\end_inset
+
+, and 
+\begin_inset Formula $N$
+\end_inset
+
+ are integers.
+\end_layout
+
+\begin_layout Standard
+So, we get the following parameterization for (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:sum-of-squares-for-box"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+),
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{ccc}
+A'_{a}-D & = & mM+nN\\
+B'_{b}-D & = & mN-nM\\
+C'_{c}-D & = & mN+nM\\
+D & = & mM-nN
+\end{array}.\label{eq:full-parameterization}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Substituting the value for 
+\begin_inset Formula $D$
+\end_inset
+
+ from the above shows us that
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{ccc}
+A'_{a} & = & 2mM\\
+B'_{b} & = & \left(m-n\right)\left(M+N\right)\\
+C'_{c} & = & \left(m+n\right)\left(M+N\right)\\
+D & = & mM-nN
+\end{array}.\label{eq:final-result}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If, for 
+\begin_inset Formula $C'_{c}$
+\end_inset
+
+, we say that 
+\begin_inset Formula $m+n=f$
+\end_inset
+
+, and 
+\begin_inset Formula $M+N=F$
+\end_inset
+
+, where 
+\begin_inset Formula $fF=C_{c}$
+\end_inset
+
+, we have the folowing system of equations:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{ccc}
+A'_{a} & = & 2mM\\
+B'_{b} & = & \left(m-n\right)\left(M+N\right)\\
+f & = & m+n\\
+F & = & M+N\\
+D & = & mM-nN
+\end{array}.\label{eq:system-of-equations}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Solving for m, n, M, N, and D we get
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{ccc}
+D & = & \frac{2FfA'_{a}+{B'_{b}}^{2}-F^{2}f^{2}}{2\left(Ff+B'_{b}\right)}\\
+M & = & \frac{A'_{a}F}{Ff+B'_{b}}\\
+N & = & \frac{F\left(Ff-A'_{a}+B'_{b}\right)}{Ff+B'_{b}}\\
+m & = & \frac{Ff+B'_{b}}{2F}\\
+n & = & \frac{Ff-B'_{b}}{2F}
+\end{array}.\label{eq:solution-for-sum-of-squares}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+I 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+D=\frac{2A'_{a}C'_{c}+{B'_{b}}^{2}-{C'_{c}}^{2}}{2\left(C'_{c}+B'_{b}\right)}.\label{eq:new-solution-for-D}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Substituting this value of D in (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:simplified-front-side-of-even"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+), gives us
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+{A'_{a}}^{2}+{B'_{b}}^{2}-{C'_{c}}^{2}=\frac{2\left(2\mathit{A'}_{a}\mathit{C'}_{c}+{B'_{b}}^{2}-{C'_{c}}^{2}\right)\left(\mathit{A'}_{a}+\mathit{B'}_{b}-\mathit{C'}_{c}\right)}{2\mathit{C'}_{c}+2\mathit{B'}_{b}},\label{eq:substituted-D}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+which gives us 3 solutions for 
+\begin_inset Formula $C'_{c}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{c}
+C'_{c}=B'_{b}\\
+C'_{c}=\frac{A'_{a}}{2}\\
+C'_{c}=A'_{a}-B'_{b}
+\end{array}.\label{eq:solutions-for-c}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Recall, however, that since 
+\begin_inset Formula $c$
+\end_inset
+
+ can be either 
+\begin_inset Formula $1$
+\end_inset
+
+ or 
+\begin_inset Formula $2$
+\end_inset
+
+, so this means that either 
+\begin_inset Formula $C'_{1}=C'_{2}$
+\end_inset
+
+, which would result in a zero length side in the integer box, or else 
+\begin_inset Formula $C'_{1}$
+\end_inset
+
+ equals one of the solutions in (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:solutions-for-c"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+), and 
+\begin_inset Formula $C'_{2}$
+\end_inset
+
+ equals another.
+\end_layout
+
+\begin_layout Standard
+If either 
+\begin_inset Formula $C'_{1}$
+\end_inset
+
+ or 
+\begin_inset Formula $C'_{2}$
+\end_inset
+
+ equals to one of 
+\begin_inset Formula $B'_{b}$
+\end_inset
+
+, for 
+\begin_inset Formula $b$
+\end_inset
+
+ equalling 
+\begin_inset Formula $1$
+\end_inset
+
+ or 
+\begin_inset Formula $2$
+\end_inset
+
+, since 
+\begin_inset Formula $B'_{1}+B'_{2}=C'_{1}+C'_{2}$
+\end_inset
+
+, then that means that the pair 
+\begin_inset Formula $\left(B'_{1},B'_{2}\right)$
+\end_inset
+
+ and pair 
+\begin_inset Formula $\left(C'_{1},C'_{2}\right)$
+\end_inset
+
+ would describe identical triangles when parameterized per (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:py-triple"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ This would mean that unless there was a 0-length edge on the box, there
+ would be four identical edges on one face of the box, which would result
+ in an irrational diagonal on that face.
+ Therefore, if the box is not degenerate and still exists, it must be the
+ case that 
+\begin_inset Formula $C'_{1}+C'_{2}=\frac{A'_{a}}{2}+A'_{a}-B'_{b}$
+\end_inset
+
+, which should equal 
+\begin_inset Formula $2D$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Since 
+\begin_inset Formula $b$
+\end_inset
+
+ can be either 
+\begin_inset Formula $1$
+\end_inset
+
+ or 
+\begin_inset Formula $2$
+\end_inset
+
+, however, and since 
+\begin_inset Formula $B'_{2}=2D-B'_{1}$
+\end_inset
+
+and 
+\begin_inset Formula $B'_{1}=2D-B'_{2}$
+\end_inset
+
+, that means that both of the following must be true:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{ccc}
+\frac{A'_{a}}{2}+A'_{a}-B'_{b} & = & 2D\\
+\frac{A'_{a}}{2}+A'_{a}-2D+B'_{b} & = & 2D
+\end{array}.\label{eq:penultimate}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This means that
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{c}
+A'_{a}=2D\\
+B'_{b}=D
+\end{array},\label{eq:finale}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+which requires that D=0, meaning that no perfect integer box exists.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintAll"
+bibfiles "PerfectIntegerBox"
+options "plain"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Appendix
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+AtBeginEnvironment{proof}{
+\backslash
+renewcommand{
+\backslash
+qedsymbol}{}}{}{} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Lemma
+\begin_inset CommandInset label
+LatexCommand label
+name "lemma:integer-pythagorean-triple"
+
+\end_inset
+
+Any all-integer pythagorean triple may be parameterized by 
+\begin_inset Formula $\left(m'-n',2\sqrt{m'n'},m'+n'\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Since we know that Euclid's formula for pythagrean triples 
+\begin_inset Formula $\left(m^{2}-n^{2},2mn,m^{2}+n^{2}\right)$
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "WIKI1"
+literal "false"
+
+\end_inset
+
+ generates every possible primitive pythagorean triple (among others), we
+ can multiply each element of the tuple by some integer factor 
+\begin_inset Formula $k$
+\end_inset
+
+ to generate every possible pythagorean triple.
+ We can then distribute k across the triple such that:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\begin{array}{c}
+m'=km^{2}\\
+n'=kn^{2}
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+And since 
+\begin_inset Formula $\left(k\left(m^{2}-n^{2}\right)\right){}^{2}+\left(k2mn\right){}^{2}=\left(k\left(m^{2}+n^{2}\right)\right)^{2}$
+\end_inset
+
+, then 
+\begin_inset Formula $\left(m'-n'\right)^{2}+\left(2\sqrt{m'n'}\right){}^{2}=\left(m'+n'\right){}^{2}$
+\end_inset
+
+, which describes the same triangle.
+ Since both 
+\begin_inset Formula $m'$
+\end_inset
+
+ and 
+\begin_inset Formula $n'$
+\end_inset
+
+ are both equal to 
+\begin_inset Formula $k$
+\end_inset
+
+ multiplied by a square number, the square root of their product must also
+ be an integer.
+\end_layout
+
+\begin_layout Lemma
+\begin_inset CommandInset label
+LatexCommand label
+name "lemma:unique-mod-4"
+
+\end_inset
+
+You can identify the parities, or evenness or oddness, of two otherwise
+ unknown square integers simply by examining their sum.
+\end_layout
+
+\begin_layout Proof
+Note that any odd integer represented as 
+\begin_inset Formula $2p+1$
+\end_inset
+
+ when squared is 
+\begin_inset Formula $4p^{2}+4p+1$
+\end_inset
+
+, and the square of any even integer represented by 
+\begin_inset Formula $2q$
+\end_inset
+
+ when squared is 
+\begin_inset Formula $4q^{2}.$
+\end_inset
+
+ This means that the sum of any two square numbers must be one of the following:
+ 
+\end_layout
+
+\begin_layout Proof
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Itemize
+an odd number, which can only happen when adding an odd and an even square,
+\end_layout
+
+\begin_layout Itemize
+equal to exactly 2 more than a multiple of 4, which can only happen when
+ adding two odd squares, or
+\end_layout
+
+\begin_layout Itemize
+equal to a multiple of 4, which can only happen when adding two even squares.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Lemma
+\begin_inset CommandInset label
+LatexCommand label
+name "lemma:sum-of-squares"
+
+\end_inset
+
+The equation 
+\begin_inset Formula $x^{2}+y^{2}=z^{2}+w^{2}$
+\end_inset
+
+ can be parameterized and rewritten as 
+\begin_inset Formula $\left(mM+nN\right)^{2}+\left(mN-nM\right)^{2}=\left(mN+nM\right)^{2}+\left(mM-nN\right)^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Consider the equation
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+x^{2}+y^{2}=z^{2}+w^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Per lemma 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lemma:unique-mod-4"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, the parity of values on the right each have matching parities on the left.
+ We shall say that 
+\begin_inset Formula $x$
+\end_inset
+
+ and 
+\begin_inset Formula $w$
+\end_inset
+
+ share parity, and that 
+\begin_inset Formula $y$
+\end_inset
+
+ and 
+\begin_inset Formula $z$
+\end_inset
+
+ also share parity.
+\end_layout
+
+\begin_layout Proof
+Since 
+\begin_inset Formula $x$
+\end_inset
+
+ and 
+\begin_inset Formula $w$
+\end_inset
+
+ share parity, we can say that 
+\begin_inset Formula $x=mM+nN$
+\end_inset
+
+ and 
+\begin_inset Formula $w=mM-nN$
+\end_inset
+
+ for some integers 
+\begin_inset Formula $m$
+\end_inset
+
+, 
+\begin_inset Formula $n$
+\end_inset
+
+, 
+\begin_inset Formula $M$
+\end_inset
+
+, and 
+\begin_inset Formula $N$
+\end_inset
+
+, and since 
+\begin_inset Formula $y$
+\end_inset
+
+ and 
+\begin_inset Formula $z$
+\end_inset
+
+ share parity, we can say that 
+\begin_inset Formula $y=mN-c$
+\end_inset
+
+ and 
+\begin_inset Formula $z=mN+c$
+\end_inset
+
+ for some integer, 
+\begin_inset Formula $c$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Substituting this into the equation yields
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+m^{2}M^{2}+2mMnN+n^{2}N^{2}+m^{2}N^{2}-2mNc+c^{2}=m^{2}N^{2}+2mNc+c^{2}+m^{2}M^{2}-2mMnN+n^{2}N^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+This requires 
+\begin_inset Formula $c=nM$
+\end_inset
+
+, so
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+m^{2}M^{2}+2mMnN+n^{2}N^{2}+m^{2}N^{2}-2mNnM+n^{2}M^{2}=m^{2}N^{2}+2mNnM+n^{2}M^{2}+m^{2}M^{2}-2mMnN+n^{2}N^{2},
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+which simplifies to
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\left(mM+nN\right)^{2}+\left(mN-nM\right)^{2}=\left(mN+nM\right)^{2}+\left(mM-nN\right)^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
