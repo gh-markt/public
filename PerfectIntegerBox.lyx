@@ -745,7 +745,7 @@ If, for
 \end_inset
 
 , where 
-\begin_inset Formula $fF=C_{c}$
+\begin_inset Formula $fF=C'_{c}$
 \end_inset
 
 , we have the folowing system of equations:
@@ -790,7 +790,11 @@ n & = & \frac{Ff-B'_{b}}{2F}
 \end_layout
 
 \begin_layout Standard
-I 
+Since 
+\begin_inset Formula $fF=C'_{c}$
+\end_inset
+
+, this means that
 \end_layout
 
 \begin_layout Standard
@@ -805,7 +809,11 @@ D=\frac{2A'_{a}C'_{c}+{B'_{b}}^{2}-{C'_{c}}^{2}}{2\left(C'_{c}+B'_{b}\right)}.\l
 \end_layout
 
 \begin_layout Standard
-Substituting this value of D in (
+Substituting this value of 
+\begin_inset Formula $D$
+\end_inset
+
+ in (
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:simplified-front-side-of-even"
@@ -891,7 +899,7 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-If either 
+First, if either 
 \begin_inset Formula $C'_{1}$
 \end_inset
 
