@@ -115,7 +115,7 @@ Mark Tarrabain (markt@nerdflat.com)
 \begin_layout Standard
 \noindent
 \align right
-Sept, 2022
+Nov, 2022
 \end_layout
 
 \begin_layout Abstract
@@ -946,11 +946,11 @@ noprefix "false"
 \end_inset
 
 ).
- This would mean that unless there was a 0-length edge on the box, there
- would be four identical edges on one face of the box, which would result
- in an irrational diagonal on that face.
- Therefore, if the box is not degenerate and still exists, it must be the
- case that 
+ This would mean that there must be a 0-length edge on the box, a degenerate
+ condition as the above formulas would be describing a 2 dimensional shape
+ rather than a 3 dimensional one.
+ If the box is not degenerate and still exists, it must be the case that
+ 
 \begin_inset Formula $C'_{1}+C'_{2}=\frac{A'_{a}}{2}+A'_{a}-B'_{b}$
 \end_inset
 
@@ -1009,7 +1009,7 @@ This means that
 \begin{array}{c}
 A'_{a}=2D\\
 B'_{b}=D
-\end{array},\label{eq:finale}
+\end{array}.\label{eq:finale}
 \end{equation}
 
 \end_inset
@@ -1018,7 +1018,21 @@ B'_{b}=D
 \end_layout
 
 \begin_layout Standard
-which requires that D=0, meaning that no perfect integer box exists.
+Since 
+\begin_inset Formula $A'_{1}+A'_{2}=2D$
+\end_inset
+
+, that would make one of 
+\begin_inset Formula $A'_{1}$
+\end_inset
+
+ or 
+\begin_inset Formula $A'_{2}$
+\end_inset
+
+ equal 0, which would result in a 0-length edge and therefore the box must
+ be degenerate.
+ Therefore, no perfect integer box exists.
 \begin_inset ERT
 status open
 
