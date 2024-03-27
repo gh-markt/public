@@ -302,15 +302,15 @@ status open
 
 
 \backslash
-begin{wrapfigure}{l}{6cm}
+begin{wrapfigure}{l}{3cm}
 \end_layout
 
 \end_inset
 
 
 \begin_inset Graphics
-	filename illustrated-prism.ps
-	width 5cm
+	filename boxes.ps
+	width 3cm
 
 \end_inset
 
@@ -348,8 +348,9 @@ Let us begin by considering the diagram of such a box illustrated here,
 \end_inset
 
 .
- Also highlighted on the diagram, but unlabelled, are the face diagonals,
- which we shall call 
+ Also illustrated are embedded right angle triangles within the box that
+ we be utiliizing for this proof.
+ the face diagonals, which we shall call 
 \begin_inset Formula $P$
 \end_inset
 
