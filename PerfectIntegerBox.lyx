@@ -351,8 +351,8 @@ Let us begin by considering the diagram of such a box illustrated here,
 
 .
  Also illustrated are embedded right angle triangles within the box that
- we be utiliizing for this proof.
- The face diagonals, which we shall call 
+ we be utilizing for this proof.
+ We shall label the face diagonals 
 \begin_inset Formula $P$
 \end_inset
 
@@ -737,7 +737,7 @@ C=\frac{D\left(a^{4}+2a^{2}b^{2}+b^{4}+a^{2}+b^{2}+1\right)}{a^{4}+2a^{2}b^{2}+b
 \end_layout
 
 \begin_layout Standard
-But if we substitute this into (
+When we substitute this into (
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:main-inteteger-diagonal"
@@ -767,7 +767,8 @@ Which means (unless
 \begin_inset Formula $D$
 \end_inset
 
- were 0), we could divide both side by 
+ were 0, a degenerate case that we are not considering), we could divide
+ both side by 
 \begin_inset Formula $D$
 \end_inset
 
@@ -778,7 +779,7 @@ Which means (unless
 \begin_inset Formula 
 \begin{equation}
 \begin{array}{c}
-1=\frac{\left(a^{8}+4\left(b^{2}+1\right)a^{6}+6\left(b^{2}+1\right)^{2}a^{4}+2\left(2b^{6}+6b^{4}+5b^{2}+2\right)a^{2}+\left(b^{2}+1\right)^{4}\right)}{\left(a^{2}+b^{2}+1\right)^{4}}\end{array}\label{eq:numer-equals-denom}
+1=\frac{a^{8}+4\left(b^{2}+1\right)a^{6}+6\left(b^{2}+1\right)^{2}a^{4}+2\left(2b^{6}+6b^{4}+5b^{2}+2\right)a^{2}+\left(b^{2}+1\right)^{4}}{\left(a^{2}+b^{2}+1\right)^{4}}\end{array}\label{eq:numer-equals-denom}
 \end{equation}
 
 \end_inset
@@ -794,7 +795,7 @@ Which means that the denonominator of the right hand side equals the numerator.
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-\left(a^{2}+b^{2}+1\right)^{4}=a^{8}+4a^{6}b^{2}+6a^{4}b^{4}+4a^{2}b^{6}+b^{8}+4a^{6}+12a^{4}b^{2}+12a^{2}b^{4}+4b^{6}+6a^{4}+10a^{2}b^{2}+6b^{4}+4a^{2}+4b^{2}+1\label{eq:penultimate}
+\left(a^{2}+b^{2}+1\right)^{4}=a^{8}+4\left(b^{2}+1\right)a^{6}+6\left(b^{2}+1\right)^{2}a^{4}+2\left(2b^{6}+6b^{4}+5b^{2}+2\right)a^{2}+\left(b^{2}+1\right)^{4}\label{eq:penultimate}
 \end{equation}
 
 \end_inset
@@ -803,7 +804,7 @@ Which means that the denonominator of the right hand side equals the numerator.
 \end_layout
 
 \begin_layout Standard
-Expanding the left hand side and then subtracting the right hand side from
+Fully expanding both sides and then subtracting the right hand side from
  both sides gives us:
 \end_layout
 
