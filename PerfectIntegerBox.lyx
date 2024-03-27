@@ -206,8 +206,10 @@ literal "true"
 \end_inset
 
  for readers unfamiliar with these topics.
- None of the polynomials used by this proof are higher than degree 4, so
- exact solutions can readily be found.
+ Ahtough polynomials as high as degree 8 exist in this proof, higher degrees
+ readily cancel eachother out when evaluated in context of the equation
+ being considered, and we are left with no higher degrees than 2, so exact
+ solutions can readily be found.
  The various solutions this author found to the systems of equations used
  by this proof were discovered using Maple CAS, and solutions verified on
  www.wolframalpha.com.
@@ -350,7 +352,7 @@ Let us begin by considering the diagram of such a box illustrated here,
 .
  Also illustrated are embedded right angle triangles within the box that
  we be utiliizing for this proof.
- the face diagonals, which we shall call 
+ The face diagonals, which we shall call 
 \begin_inset Formula $P$
 \end_inset
 
@@ -938,7 +940,7 @@ The rational points on a unit sphere can be represented as
 \begin_inset Formula $\frac{1-a^{2}-b^{2}}{1+a^{2}+b^{2}}$
 \end_inset
 
-.
+, for any rational a and b.
 \end_layout
 
 \begin_layout Proof
