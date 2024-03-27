@@ -646,20 +646,30 @@ noprefix "false"
 
 \end_inset
 
-), we can know that 
-\begin_inset Formula $\frac{X}{D}=\frac{2a}{1+a^{2}+b^{2}}$
+), we can know we can find rational values a and b such that:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{c}
+\frac{X}{D}=\frac{2a}{1+a^{2}+b^{2}}\\
+\frac{Y}{D}=\frac{2b}{1+a^{2}+b^{2}}\\
+\frac{Z}{D}=\frac{1-a^{2}-b^{2}}{1+a^{2}+b^{2}}
+\end{array}\label{eq:normalized_edges}
+\end{equation}
+
 \end_inset
 
-, 
-\begin_inset Formula $\frac{Y}{D}=\frac{2b}{1+a^{2}+b^{2}}$
+
+\end_layout
+
+\begin_layout Standard
+This means that the diagonal 
+\begin_inset Formula $P$
 \end_inset
 
-, and 
-\begin_inset Formula $\frac{Z}{D}=\frac{1-a^{2}-b^{2}}{1+a^{2}+b^{2}}$
-\end_inset
-
-.
- This means that the diagonal P on the front face must be equal to 
+ on the front face must be equal to 
 \begin_inset Formula $D\frac{2\sqrt{a^{2}+b^{2}}}{1+a^{2}+b^{2}}$
 \end_inset
 
@@ -686,7 +696,19 @@ So that means that
 \end_layout
 
 \begin_layout Standard
-Solving for A, B, and C frrom (
+Solving for 
+\begin_inset Formula $A$
+\end_inset
+
+, 
+\begin_inset Formula $B$
+\end_inset
+
+, and 
+\begin_inset Formula $C$
+\end_inset
+
+ frrom (
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:rearranged-labels"
@@ -741,7 +763,15 @@ D=\frac{\left(a^{8}+4\left(b^{2}+1\right)a^{6}+6\left(b^{2}+1\right)^{2}a^{4}+2\
 \end_layout
 
 \begin_layout Standard
-Which means (unless D were 0), we could divide both side by D to get:
+Which means (unless 
+\begin_inset Formula $D$
+\end_inset
+
+ were 0), we could divide both side by 
+\begin_inset Formula $D$
+\end_inset
+
+ to get:
 \end_layout
 
 \begin_layout Standard
@@ -789,8 +819,25 @@ Expanding the left hand side and then subtracting the right hand side from
 \end_layout
 
 \begin_layout Standard
-Which means that either a or b are 0, which would result in a 0-length edge,
- and therefore the box must be degenerate.
+Which means that either 
+\begin_inset Formula $a$
+\end_inset
+
+ or 
+\begin_inset Formula $b$
+\end_inset
+
+ are 0, which per (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:normalized_edges"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) would result in a 0-length edge, and therefore the box must be degenerate.
  Therefore, no perfect integer box exists.
 \begin_inset ERT
 status open
