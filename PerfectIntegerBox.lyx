@@ -115,7 +115,7 @@ Mark Tarrabain (markt@nerdflat.com)
 \begin_layout Standard
 \noindent
 \align right
-Mar, 2024
+Apr, 2024
 \end_layout
 
 \begin_layout Abstract
@@ -493,7 +493,43 @@ reference "eq:py-triple"
 \end_layout
 
 \begin_layout Standard
-We could therefore suppose that 
+So if we let 
+\begin_inset Formula $A_{1}$
+\end_inset
+
+and 
+\begin_inset Formula $A_{2}$
+\end_inset
+
+ parameterize the 
+\begin_inset Formula $(X,R,D)$
+\end_inset
+
+ triple, 
+\begin_inset Formula $B_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $B_{2}$
+\end_inset
+
+ parameterize the 
+\begin_inset Formula $(Y,Q,D)$
+\end_inset
+
+ triple, and 
+\begin_inset Formula $C_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $C_{2}$
+\end_inset
+
+ parameterize the 
+\begin_inset Formula $(P,Z,D)$
+\end_inset
+
+ triple, we could therefore suppose that 
 \begin_inset Formula $X=2\sqrt{A_{1}A_{2}}$
 \end_inset
 
